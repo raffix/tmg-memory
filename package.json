@@ -4,6 +4,7 @@
   "description": "In memory stack and dictionary API",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest --coverage"
   },
   "author": "Raffael Ciciliano Rossi",
