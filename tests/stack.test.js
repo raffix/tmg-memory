@@ -71,7 +71,7 @@ describe('Get from stack', () => {
       expect(res.body.value).toBe('text');
   })
 
-  it('Should return 123', async () => {
+  it('Should return undefined', async () => {
     const res = await request(app)
       .get('/api/stack');
 
