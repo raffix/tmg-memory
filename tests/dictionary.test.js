@@ -9,7 +9,7 @@ describe('Add to dictionary', () => {
         .send({
           key: 'name',
           value: 'John',
-          ttl: 1
+          ttl: 10
         });
 
       expect(res.statusCode).toEqual(201);
@@ -110,12 +110,12 @@ describe('Get from dictionary', () => {
       expect(res.body).toBe('');
     })
 
-    it('Should return error message Key not found', async () => {
+    it('Should return a empty value', async () => {
       const res = await request(app)
         .get('/api/dictionary/key-new');
 
       expect(res.statusCode).toEqual(200);
-      expect(res.body).toBe('Key not found');
+      expect(res.body).toBe('');
     })
   })
 
@@ -145,7 +145,7 @@ describe('Delete from dictionary', () => {
       const res = await request(app)
         .delete('/api/dictionary/alternative-key');
 
-      expect(res.statusCode).toEqual(200);
+      expect(res.statusCode).toEqual(404);
       expect(res.body).toBe('Key not found');
     })
   })

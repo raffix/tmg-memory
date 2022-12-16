@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const controllers = require('./controllers');
+const { dictionaryController, stackController } = require('./controllers/index.js');
 
 const router = Router();
 
-router.post('/stack', controllers.addToStak);
-router.get('/stack', controllers.getFromStack);
-router.post('/dictionary', controllers.addToDictionary);
-router.get('/dictionary/:key', controllers.getFromDictionary);
-router.delete('/dictionary/:key', controllers.deleteFromDictionary);
+router.post('/stack', stackController.addToStak);
+router.get('/stack', stackController.getFromStack);
+router.post('/dictionary', dictionaryController.addToDictionary);
+router.get('/dictionary/:key', dictionaryController.getFromDictionary);
+router.delete('/dictionary/:key', dictionaryController.deleteFromDictionary);
 
 module.exports = router;

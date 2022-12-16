@@ -25,6 +25,7 @@ POST /api/dictionary
 body: { key: 'your_key', value: 'value' || 123, ttl: 30 }
 ``` 
 * the ttl attribute it's in seconds and if don't sent the default 0 will be applied and this key never expire
+* when a ttl value it's informed, a callback function will be called when this time end and delete this tuple.
 
 To consume:
 ```
@@ -35,6 +36,7 @@ To delete:
 ```
 DELETE /api/dictionary/your_key
 ```
+
 
 
 ### To run the project
